@@ -12,7 +12,7 @@ use Foswiki::Plugins ();    # For the API version
 our $VERSION = "1.0";
 #use version; our $VERSION = version->declare("v1.1.7");
 
-our $RELEASE = '1.0.0';
+our $RELEASE = '1.0.1';
 
 our $SHORTDESCRIPTION = 'Easy numbering in topics.';;
 
