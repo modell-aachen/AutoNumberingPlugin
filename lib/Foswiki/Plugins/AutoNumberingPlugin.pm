@@ -42,11 +42,11 @@ sub beforeCommonTagsHandler {
 sub addNumber {
     my ( $header, $level, $spaces, $numbers ) = @_;
 
-    my $length = length( $level );
+    my $length = length( $level ) - 1;
     my $string = "$header---$level$spaces";
 
     # print higher levels
-    for ( my $i = 0; $i < $length-1; $i++ ) {
+    for ( my $i = 0; $i < $length; $i++ ) {
         @$numbers[$i] = 1 unless @$numbers[$i]; # skipped a level
         $string .= "@$numbers[$i].";
     }
@@ -54,6 +54,11 @@ sub addNumber {
     # increment current level
     @$numbers[$length]++;
     $string .= "@$numbers[$length].";
+
+    # forget the rest
+    if(scalar @$numbers > $length) {
+        @$numbers = splice(@$numbers, 0, $length + 1);
+    }
 
     return $string;
 }
