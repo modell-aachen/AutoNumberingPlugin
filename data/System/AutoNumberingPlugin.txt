@@ -1,0 +1,55 @@
+%META:TOPICPARENT{name="Plugins"}%
+---+ AutoNumbering Plugin
+
+%SHORTDESCRIPTION%
+
+---++ Usage
+If you start your headings with =###= they will automatically be numbered.
+Example:
+<pre>
+%NOP%---+ ### My first heading
+...
+%NOP%---++ ### My sub header
+...
+%NOP%---++ ### My other header
+...
+%NOP%---+ ### My second heading
+...
+</pre>
+will render as
+<div style="border: 1px solid black">
+<h1> 1. My first heading</h1>
+...
+<h2> 1.1. My sub header</h2>
+...
+<h2> 1.2. M other header</h2>
+...
+<h1> 2. My second heading</h1>
+...
+</div>
+
+---++ Caveats
+   * This plugin does not respect &lt;varbatim&gt; tags.
+   * Tables can lead to weird situations
+   * Format for headings _must_ be like =---+++ ###= (spaces optional, but no other characters before the ###, no html &lt;h1&gt; etc. headers)
+
+<!--
+One line description, required for extensions repository catalog.
+   * Set SHORTDESCRIPTION = Easy numbering in topics.
+-->
+
+---++ Installation
+%$INSTALL_INSTRUCTIONS%
+
+---++ Plugin Info
+
+|  Author: | Foswiki:Main.PluginAuthor |
+|  Copyright: | &copy; 2012, Foswiki Contributors |
+|  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
+|  Release: | %$RELEASE% |
+|  Version: | %$VERSION% |
+|  Change&nbsp;History: | <!-- versions below in reverse order -->&nbsp; |
+|  XX Mmm 20XX (1.0) | Description of change |
+|  Home: | http://foswiki.org/Extensions/%TOPIC% |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
+
